@@ -1,0 +1,20 @@
+<html lang="en">
+  <body>
+    <div id="header">
+      <h1>CBA Hacks</h1>
+      <table width=70%>
+	<tr>
+	{%for navilink in navigation %}
+	{%if navilink.display %}
+	<td><a id="header_link" href='{{ navilink.link }}'>
+	  {{ navilink.name }} </a></td>
+	{%endif %}
+	{%endfor %}
+	</tr>
+      </table>
+    </div>
+
+    <div id="content">{%block content %}{%endblock %}</div>
+
+  </body>
+</html>

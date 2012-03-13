@@ -1,0 +1,17 @@
+{%extends "templates/base.html" %}
+
+{%block content %}
+<h2>Contact</h2>
+Keep in touch through one of the following
+<ul>
+{%for service in contacts %}
+{%if service.display and service.link %}
+<li><a href="{{ service.link }}">{{ service.service }}</a>
+{%if service.description %}
+: {{ service.description }}
+{%endif %}
+</a></li>
+{%endif %}
+{%endfor %}
+</ul>
+{%endblock %}

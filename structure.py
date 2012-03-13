@@ -1,0 +1,42 @@
+from handlers import About, Contact, Conference
+
+top_panel = [
+    {'name': 'Contact',
+     'link': '/contact',
+     'handler': Contact,
+     'display': True,
+     },
+    {'name': 'Conferences',
+     'link': '/conferences',
+     'handler': Conference,
+     'display': True,
+     },
+    {'name': 'Archived talks',
+     'link': '/talks',
+     'handler': About,
+     'display': True,
+     },
+    ]
+    
+contact_links = [
+    {'service': 'Twitter',
+     'link': 'https://twitter.com/#!/cbahacks',
+     'description': None,
+     'display': True,
+     },
+    {'service': 'Google+',
+     'link': None,
+     'description': None,
+     'display': True,
+     },
+    {'service': 'Email list',
+     'link': 'https://groups.google.com/forum/?fromgroups#!forum/cba-hacks',
+     'description': None,
+     'display': True,
+     },
+    {'service': 'IRC',
+     'link': 'http://freenode.net/irc_servers.shtml',
+     'description': '/join #cbahacks',
+     'display': True,
+     },
+    ]

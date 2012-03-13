@@ -1,0 +1,28 @@
+
+<form action="/admin/upload_talk" method="post">
+  <div>
+    Presenter first name: 
+    <input type="text" name="first_name" rows="1" cols="30"></input>
+    <br>
+    Presenter last name: 
+    <input type="text" name="last_name" rows="1" cols="30"></input>
+  </div>  
+  <div>
+    Event: 
+    <select name="event">
+    {%for event in events %}
+      {{event.tag}}
+	<option value="{{event.tag}}">{{event.tag}}</option>
+    {%endfor %}
+    </select>
+  </div>
+  <div>
+    Topic: 
+    <input type="text" name="topic" size="60"></input>
+  </div>
+  <div>
+    File:
+    <input name="file" type="file">
+  </div>
+  <div><input type="submit" value="Submit"></div>
+</form>

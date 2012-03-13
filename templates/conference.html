@@ -1,0 +1,41 @@
+{%extends "templates/base.html" %}
+
+{%block content %}
+<h2>Conferences and events</h2>
+Get together and have some geek fun
+
+<h3>Upcoming gatherings</h3>
+<ul>
+{%for item in upcoming_events %}
+<li>{{item.event}}</li>
+{%if item.talks %}
+Presenters
+<ul>
+{%for talk in item.talks %}
+<li>{{talk.name}} is going to talk about {{talk.topic}}</li>
+{%endfor %}
+</ul>
+{%endif %}
+{%endfor %}
+</ul>
+
+<h3>Past gatherings</h3>
+<ul>
+{%for item in past_events %}
+<li id="talk_event">{{item.event}}</li>
+{%if item.talks %}
+Presenters
+<ul>
+{%for talk in item.talks %}
+<li id="presenter">{{talk.first_name}} {{talk.last_name}} \
+talked about {{talk.topic}}.
+{%if talk.foil_link %}
+ <a href="download/{{talk.key}}">Download</a> it
+{%endif %}
+</li>
+{%endfor %}
+</ul>
+{%endif %}
+{%endfor %}
+</ul>
+{%endblock %}
